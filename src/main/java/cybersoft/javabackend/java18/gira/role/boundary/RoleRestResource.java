@@ -5,9 +5,12 @@ import cybersoft.javabackend.java18.gira.role.dto.RoleDTO;
 import cybersoft.javabackend.java18.gira.role.service.RoleService;
 import org.springframework.data.domain.Pageable;
 import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
+import java.util.List;
+import java.util.UUID;
 
 @RestController
 @RequestMapping("/roles")
@@ -35,5 +38,15 @@ public class RoleRestResource {
     @PostMapping
     public Object save(@RequestBody @Valid RoleDTO roleDTO){
         return ResponseUtils.get(service.save(roleDTO), HttpStatus.CREATED);
+    }
+
+    @PostMapping("{role-id}/add-operations")
+    public ResponseEntity<?> addOperations(
+            @RequestBody List<UUID> ids,
+            @PathVariable("role-id") UUID roleId){
+        return ResponseUtils.get(
+                service.addOperations(roleId, ids)
+                , HttpStatus.OK
+        );
     }
 }
