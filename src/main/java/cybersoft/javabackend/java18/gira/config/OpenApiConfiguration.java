@@ -20,7 +20,7 @@ public class OpenApiConfiguration {
                         new SecurityScheme().type(SecurityScheme.Type.HTTP).scheme("bearer")))
                 .info(new Info()
                         .title("Gira Application")
-                        .description("Service for Education Purpose")
+                        .description("Operation for Education Purpose")
                         .version("v1.0")
                         .license(new License().name("NO LICENSE").url("http://tuanphan.dev"))
                         .contact(new Contact()
