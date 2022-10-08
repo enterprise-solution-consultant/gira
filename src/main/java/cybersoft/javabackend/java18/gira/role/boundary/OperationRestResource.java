@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.*;
 import javax.validation.Valid;
 
 @RestController
-@RequestMapping("/operations")
+@RequestMapping("api/operations")
 public class OperationRestResource {
     private final OperationService operationService;
 

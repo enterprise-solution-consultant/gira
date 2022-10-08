@@ -6,7 +6,6 @@ import org.springframework.web.bind.MethodArgumentNotValidException;
 
 import javax.validation.ConstraintViolation;
 import javax.validation.ConstraintViolationException;
-
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -22,7 +21,7 @@ public class ExceptionUtils {
     }
 
     public static List<String> getErrors(RuntimeException exception) {
-        return List.of(DEFAULT_UNEXPECTED_MESSAGE);
+        return List.of(exception.getMessage());
     }
 
     public static List<String> getErrors(MethodArgumentNotValidException exception) {

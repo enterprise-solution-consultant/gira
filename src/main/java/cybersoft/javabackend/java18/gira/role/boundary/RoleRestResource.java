@@ -13,7 +13,7 @@ import java.util.List;
 import java.util.UUID;
 
 @RestController
-@RequestMapping("/roles")
+@RequestMapping("api/v1/roles")
 public class RoleRestResource {
     private final RoleService service;
     
@@ -26,7 +26,7 @@ public class RoleRestResource {
         return ResponseUtils.get(service.findAllDto(RoleDTO.class), HttpStatus.OK);
     }
     
-    @GetMapping("/paging")
+    @GetMapping("paging")
     public Object findAllDtoPaging(@RequestParam("size") int size,
                                    @RequestParam("index") int index){
         return ResponseUtils.get(
