@@ -17,9 +17,7 @@ import java.util.Set;
 @NoArgsConstructor
 @SuperBuilder
 @Entity
-@Table(name = RoleEntity.Operation.TABLE_NAME, uniqueConstraints = {
-        @UniqueConstraint(name = "uc_service_g_name", columnNames = {"G_NAME"})
-})
+@Table(name = RoleEntity.Operation.TABLE_NAME)
 public class Operation extends BaseEntity {
     @Column(name = RoleEntity.Operation.NAME, unique = true, length = 100)
     @Length(min = 5, max = 100, message = "Role name must have length between {min} and {max}")
