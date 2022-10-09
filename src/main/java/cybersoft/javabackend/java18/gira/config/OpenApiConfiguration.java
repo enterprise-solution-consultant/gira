@@ -17,7 +17,7 @@ public class OpenApiConfiguration {
     public OpenAPI getOpenApi() {
         return new OpenAPI()
                 .components(new Components().addSecuritySchemes("bearerAuth",
-                        new SecurityScheme().type(SecurityScheme.Type.HTTP).scheme("bearer")))
+                        new SecurityScheme().type(SecurityScheme.Type.HTTP).scheme("bearer").bearerFormat("JWT")))
                 .info(new Info()
                         .title("Gira Application")
                         .description("Operation for Education Purpose")
